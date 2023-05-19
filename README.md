@@ -2,9 +2,9 @@
 
 ### A bit about functional programming
 
-Functional Programming as opposed to procedural programming is not based functions map from a set of inputs to some set of outputs. As you can see, this is a strict and rigorous mathematical way to program. To achieve this, FL (functional languages) makes variables immutable. This way you cannot modify anything. Then how do you do anything you may ask? Well, most FL can still copy one variable to the next. Therefore, if we want to modify some element in an array, just copy a the array while defining the changed element to the new element.
+Functional Programming as opposed to procedural programming is not based functions map from a set of inputs to some set of outputs. As you can see, this is a strict and rigorous mathematical way to program. To achieve this, FL (functional languages) makes variables immutable. This way you cannot modify anything. Then how do you do anything you may ask? Well, most FL can still copy one variable to the next. Therefore, if we want to modify some element in an array, just copy the array while defining the changed element to the new element.
 
-With this much copying, you might assume that it is a slow language, however, FLs do this in a clever way. Say we have an array of 100 different elements. FLs usually creates multiple partitions (subsets) and organizing it in a tree. Therefore, if we want to change something in the middle, copy and change a single sub-node of the tree containing the offending element.
+With this much copying, you might assume that it is a slow language, however, FLs do this in a clever way. Say we have an array of 100 different elements. FLs usually creates multiple partitions (subsets) and organize it in a tree. Therefore, if we want to change something in the middle, copy and change a single sub-node of the tree containing the offending element.
 
 
 
@@ -48,7 +48,7 @@ main = do
     print (maxDiff nums)
 ```
 
-As you can see what can be done in 7 lines of Python can be done in 4 lines of Haskell. 
+As you can see, what can be done in 7 lines of Python can be done in 4 lines of Haskell. 
 
 For the Haskell solution, the steps are
 
@@ -63,7 +63,7 @@ Scala solution if the Haskell solution is not clear, which it still isn't for me
 nums.scanLeft(Int.MaxValue)(_ min _) 	// same scan left
 	.tail								// removes the min since it was added in the scanLeft
 	.zip(nums)							// zip result with nums
-	.map(x => x._2 - x._1)				// map the tuples to get the diff (lamba func is just the diff)
+	.map(x => x._2 - x._1)				// map the tuples to get the diff (lambda func is just the diff)
 	.filter(_ != 0)						// filters out 0
 	.foldLeft(-1)(_ max _)				// returns max or -1
 ```
